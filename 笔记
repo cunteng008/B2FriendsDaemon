@@ -1,0 +1,15 @@
+1. hibernate 包扫描出现问题
+2. spring配置文件的名字和位置是可配置的，将其配置到当前web应用的初始化参数中较为合适
+3. android 客户端 字符流读取服务端返回的数据
+	JSONObject rjson = new JSONObject(buffer.toString());  
+	boolean result = rjson.getBoolean("json");
+	从rjson对象中得到key值为"json"的数据，这里服务端返回的是一个boolean类型的数据  
+服务端的代码为：使用HttpUrlConnection，服务端是用输入流来读取客户端发过来的数据。
+	而使用HttpClient的话，则服务端用相应的key值来获取数据
+	public void doPost(HttpServletRequest request,  
+            HttpServletResponse response) throws ServletException, IOException {  
+             BufferedReader br = new BufferedReader(new InputStreamReader(//使用字符流读取客户端发过来的数据  
+                request.getInputStream()));  
+                
+4. 在启动服务器时，先初始化
+5. json转换一定要根据自己的数据格式来确定使用的方法。 
