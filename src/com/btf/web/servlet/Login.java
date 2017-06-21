@@ -29,7 +29,6 @@ public class Login extends HttpServlet {
 
 		ServletContext servletContext = getServletContext();
 		ApplicationContext ctx = (ApplicationContext) servletContext.getAttribute("ApplicationContext");
-		
 		response.setContentType("text/html");
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
